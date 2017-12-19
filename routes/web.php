@@ -10,42 +10,53 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
+//user
+Route::prefix('')->group(function () {
+    Route::get('home', function () {
+        return view('customer.homepage');
+    });
 });
 
-Route::get('/user', function () {
-    return view('/users/index');
-});
+//admin
+Route::prefix('')->group(function () {
 
-Route::get('user/add', function () {
-    return view('/users/add');
-});
+    Route::get('/', function () {
+        return view('index');
+    });
 
-Route::get('user/update', function () {
-    return view('/users/update');
-});
+    Route::get('/user', function () {
+        return view('/users/index');
+    });
 
-Route::get('product', function () {
-    return view('/products/index');
-});
+    Route::get('user/add', function () {
+        return view('/users/add');
+    });
 
-Route::get('product/add', function () {
-    return view('/products/add');
-});
+    Route::get('user/update', function () {
+        return view('/users/update');
+    });
 
-Route::get('product/update', function () {
-    return view('/products/update');
-});
+    Route::get('product', function () {
+        return view('/products/index');
+    });
 
-Route::get('category', function () {
-    return view('/categories/index');
-});
+    Route::get('product/add', function () {
+        return view('/products/add');
+    });
 
-Route::get('category/add', function () {
-    return view('/categories/add');
-});
+    Route::get('product/update', function () {
+        return view('/products/update');
+    });
 
-Route::get('category/update', function () {
-    return view('/categories/update');
+    Route::get('category', function () {
+        return view('/categories/index');
+    });
+
+    Route::get('category/add', function () {
+        return view('/categories/add');
+    });
+
+    Route::get('category/update', function () {
+        return view('/categories/update');
+    });
 });
